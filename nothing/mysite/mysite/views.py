@@ -84,8 +84,8 @@ def search(request):
             Q(property_type__icontains=query) |
             Q(city__icontains=query) |
             Q(country__icontains=query) |
-            Q(location__icontains=query)
-            # Add other fields you want to search in as necessary
+            Q(location__icontains=query) |
+            Q(price__icontains=query)
         )
 
     return render(request, 'search.html', {
